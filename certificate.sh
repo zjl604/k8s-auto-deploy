@@ -5,8 +5,10 @@ wget -P /usr/local/bin/ -O "cfssljson" https://pkg.cfssl.org/R1.2/cfssljson_linu
 wget -P /usr/local/bin/ -O "cfssl-certinfo" https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64  
 chmod +x /usr/local/bin/*
 
-##### 创建 CA 证书配置
+##### 临时建一个 ssl 的目录生成证书文件，然后将文件分发到正式的 k8s ssl目录中 #######
 mkdir /root/ssl
+
+##### 创建 CA 证书配置
 cd /root/ssl
 cat > ca-config.json <<EOF
 {
