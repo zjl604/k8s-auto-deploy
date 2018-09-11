@@ -51,12 +51,6 @@ EOF
 ##### 生成 CA 证书和私钥 #####
 cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
 
-##### 分发证书,把 /root/ssl 下生成的 ca.pem , ca-key.pem ca.csr 拷贝到 k8s ssl目录下 #####
-##### 创建证书目录 #####
-mkdir -p /opt/kubernetes/ssl
-##### 拷贝证书,如果有多个mast，请scp 到另外master，我这里只有一个master #####
-cp ca.pem ca-key.pem ca.csr /opt/kubernetes/ssl
-
 #-----------------------
 
 cat > server-csr.json <<EOF
