@@ -31,6 +31,7 @@ scp /root/ssl/server-key.pem root@172.16.18.3:/opt/kubernetes/ssl
 scp /root/ssl/server.pem root@172.16.18.4:/opt/kubernetes/ssl
 scp /root/ssl/server-key.pem root@172.16.18.4:/opt/kubernetes/ssl
 
+# etcd01
 # 创建 etcd 启动的配置文件
 cat <<EOF >/opt/kubernetes/cfg/etcd
 #[Member]
